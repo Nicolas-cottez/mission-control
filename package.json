@@ -1,0 +1,12 @@
+{
+  "name": "mission-control-command-center",
+  "version": "0.1.0",
+  "description": "Premium Mission Control dashboard shell for the Jarvis OpenClaw system",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

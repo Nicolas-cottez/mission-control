@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jarvis Mission Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="navigation">
+        <h1>Jarvis Mission Control</h1>
+        <nav>
+          <button data-module="overview" class="active">Overview</button>
+          <button data-module="tasks">Tasks <span class="badge">op</span></button>
+          <button data-module="calendar">Calendar <span class="badge">time</span></button>
+          <button data-module="team">Team <span class="badge">org</span></button>
+          <button data-module="office">Office</button>
+          <button data-module="memory">Memory</button>
+          <button data-module="system">System</button>
+          <button data-module="activity">Activity</button>
+        </nav>
+      </aside>
+      <div class="main-pane">
+        <header class="top-bar">
+          <div class="status-block">
+            <strong>system presence</strong>
+            <span class="chip" id="presence-status">Active</span>
+          </div>
+          <div class="clock" id="live-clock">00:00:00</div>
+          <div class="status-block">
+            <strong>mission state</strong>
+            <span id="mission-state">Operational</span>
+          </div>
+        </header>
+        <div class="content-shell">
+          <section class="module-panel active" data-module-panel="overview">
+            <div class="panel-grid" id="overview-grid"></div>
+          </section>
+
+          <section class="module-panel" data-module-panel="tasks">
+            <div class="panel-grid" id="tasks-grid"></div>
+          </section>
+
+          <section class="module-panel" data-module-panel="calendar">
+            <div class="panel-grid" id="calendar-grid"></div>
+          </section>
+
+          <section class="module-panel" data-module-panel="team">
+            <div class="panel-grid" id="team-grid"></div>
+          </section>
+
+          <section class="module-panel" data-module-panel="office">
+            <div class="panel-grid" id="office-grid"></div>
+          </section>
+
+          <section class="module-panel" data-module-panel="memory">
+            <div class="panel-grid" id="memory-grid"></div>
+          </section>
+
+          <section class="module-panel" data-module-panel="system">
+            <div class="panel-grid" id="system-grid"></div>
+          </section>
+
+          <section class="module-panel" data-module-panel="activity">
+            <div class="panel-grid" id="activity-grid"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
