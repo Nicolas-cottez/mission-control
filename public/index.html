@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jarvis Mission Control</title>
+    <title>Mission Control — Jarvis Command Console</title>
+    <meta name="description" content="Premium operator dashboard for the Jarvis OpenClaw multi-agent system" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,65 +15,155 @@
   </head>
   <body>
     <div class="app-shell">
-      <aside class="navigation">
-        <h1>Jarvis Mission Control</h1>
-        <nav>
-          <button data-module="overview" class="active">Overview</button>
-          <button data-module="tasks">Tasks <span class="badge">op</span></button>
-          <button data-module="calendar">Calendar <span class="badge">time</span></button>
-          <button data-module="team">Team <span class="badge">org</span></button>
-          <button data-module="office">Office</button>
-          <button data-module="memory">Memory</button>
-          <button data-module="system">System</button>
-          <button data-module="activity">Activity</button>
+
+      <!-- ====== SIDEBAR ====== -->
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <h1>Mission Control</h1>
+          <span>Jarvis · OpenClaw</span>
+        </div>
+
+        <nav class="sidebar-nav">
+          <button id="nav-overview" data-module="overview" class="active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            Overview
+          </button>
+
+          <button id="nav-tasks" data-module="tasks">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Tasks
+            <span class="nav-badge">ops</span>
+          </button>
+
+          <button id="nav-calendar" data-module="calendar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Calendar
+            <span class="nav-badge">time</span>
+          </button>
+
+          <button id="nav-team" data-module="team">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Team
+            <span class="nav-badge">org</span>
+          </button>
+
+          <button id="nav-office" data-module="office">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12.01"/></svg>
+            Office
+          </button>
+
+          <button id="nav-memory" data-module="memory">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="12" y1="6" x2="12" y2="13"/><line x1="9" y1="10" x2="15" y2="10"/></svg>
+            Memory
+          </button>
+
+          <button id="nav-system" data-module="system">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            System
+          </button>
+
+          <button id="nav-activity" data-module="activity">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Activity
+          </button>
         </nav>
+
+        <div class="sidebar-footer">
+          <span>v0.1.0 · OpenClaw</span>
+        </div>
       </aside>
+
+      <!-- ====== MAIN PANE ====== -->
       <div class="main-pane">
+
+        <!-- Top utility bar -->
         <header class="top-bar">
-          <div class="status-block">
-            <strong>system presence</strong>
-            <span class="chip" id="presence-status">Active</span>
+          <div class="topbar-presence">
+            <span class="presence-dot" id="presence-dot"></span>
+            <span class="presence-label" id="presence-label">System Active</span>
+            <span class="presence-detail" id="presence-detail"></span>
           </div>
-          <div class="clock" id="live-clock">00:00:00</div>
-          <div class="status-block">
-            <strong>mission state</strong>
-            <span id="mission-state">Operational</span>
+          <div class="topbar-clock" id="live-clock">00:00:00</div>
+          <div class="topbar-mission">
+            <span class="mission-label">Mission</span>
+            <span class="mission-chip" id="mission-state">Operational</span>
           </div>
         </header>
+
+        <!-- Content area -->
         <div class="content-shell">
+
+          <!-- OVERVIEW -->
           <section class="module-panel active" data-module-panel="overview">
-            <div class="panel-grid" id="overview-grid"></div>
+            <div id="overview-root"></div>
           </section>
 
+          <!-- TASKS -->
           <section class="module-panel" data-module-panel="tasks">
-            <div class="panel-grid" id="tasks-grid"></div>
+            <div class="module-header">
+              <h2>Task Board</h2>
+              <p>Operational work tracking by status, owner, and priority</p>
+            </div>
+            <div id="tasks-root"></div>
           </section>
 
+          <!-- CALENDAR -->
           <section class="module-panel" data-module-panel="calendar">
-            <div class="panel-grid" id="calendar-grid"></div>
+            <div class="module-header">
+              <h2>Calendar</h2>
+              <p>Scheduled actions and temporal visibility</p>
+            </div>
+            <div id="calendar-root"></div>
           </section>
 
+          <!-- TEAM -->
           <section class="module-panel" data-module-panel="team">
-            <div class="panel-grid" id="team-grid"></div>
+            <div class="module-header">
+              <h2>Team Structure</h2>
+              <p>Agent hierarchy, roles, and command relationships</p>
+            </div>
+            <div id="team-root"></div>
           </section>
 
+          <!-- OFFICE -->
           <section class="module-panel" data-module-panel="office">
-            <div class="panel-grid" id="office-grid"></div>
+            <div class="module-header">
+              <h2>Office</h2>
+              <p>Digital operations space — live workspace view</p>
+            </div>
+            <div id="office-root"></div>
           </section>
 
+          <!-- MEMORY -->
           <section class="module-panel" data-module-panel="memory">
-            <div class="panel-grid" id="memory-grid"></div>
+            <div class="module-header">
+              <h2>Memory</h2>
+              <p>Persistent knowledge and continuity records</p>
+            </div>
+            <div id="memory-root"></div>
           </section>
 
+          <!-- SYSTEM -->
           <section class="module-panel" data-module-panel="system">
-            <div class="panel-grid" id="system-grid"></div>
+            <div class="module-header">
+              <h2>System</h2>
+              <p>Machine vitals and service posture</p>
+            </div>
+            <div id="system-root"></div>
           </section>
 
+          <!-- ACTIVITY -->
           <section class="module-panel" data-module-panel="activity">
-            <div class="panel-grid" id="activity-grid"></div>
+            <div class="module-header">
+              <h2>Activity</h2>
+              <p>Runtime event stream and recent operations</p>
+            </div>
+            <div id="activity-root"></div>
           </section>
+
         </div>
       </div>
+
     </div>
     <script src="/js/app.js"></script>
   </body>
